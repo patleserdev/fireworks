@@ -1,0 +1,88 @@
+
+body {
+    margin: 0;
+    overflow: hidden;
+    background-image: url("assets/night.jpg");
+    background-position: center;
+    background-size: cover;
+    font-family: sans-serif;
+}
+
+#title {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 50;
+    font-size: 10rem;
+    animation: titleAnim linear 5s;
+}
+
+@keyframes titleAnim {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+
+}
+
+#controls {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10;
+}
+
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive pour petits écrans */
+@media (max-width: 600px) {
+
+    body {
+        background-position: 45% center;
+        background-size: cover;
+
+    }
+
+    #title{
+    font-size: 4rem;
+    }
+
+    #controls {
+        top: auto;
+        bottom: 20px;
+        left: 10%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    button {
+        width: 30%;
+        font-size: 12px;
+        padding: 6px 10px;
+        text-align: left;
+    }
+}
